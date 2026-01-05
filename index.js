@@ -1,5 +1,11 @@
-import { tweetsData } from './data.js'
+import { tweetsData as initialData} from './data.js'
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
+const tweetsData = JSON.parse(localStorage.getItem('tweetsData'));
+
+if(!tweetsData){
+    localStorage.setItem('tweetsData', JSON.stringify(initialData))
+}
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
@@ -147,6 +153,7 @@ function getFeedHtml(){
 
 function render(){
     document.getElementById('feed').innerHTML = getFeedHtml()
+    localStorage.setItem('tweetsData', JSON.stringify(tweetsData))
 }
 
 render()
