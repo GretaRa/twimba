@@ -29,6 +29,10 @@ i{
   color: limegreen;
 }
 
+.fa-trash:hover{
+    color: red;
+}
+
 /* layout */
 
 main, header{
