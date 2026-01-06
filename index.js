@@ -35,6 +35,7 @@ function handleLikeClick(tweetId){
     }
     targetTweetObj.isLiked = !targetTweetObj.isLiked
     render()
+    setLocalStorage()
 }
 
 function handleRetweetClick(tweetId){
@@ -49,7 +50,8 @@ function handleRetweetClick(tweetId){
         targetTweetObj.retweets++
     }
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
-    render() 
+    render()
+    setLocalStorage()
 }
 
 function handleReplyClick(replyId){
@@ -72,6 +74,7 @@ function handleTweetBtnClick(){
             uuid: uuidv4()
         })
     render()
+    setLocalStorage()
     tweetInput.value = ''
     }
 
@@ -153,6 +156,9 @@ function getFeedHtml(){
 
 function render(){
     document.getElementById('feed').innerHTML = getFeedHtml()
+}
+
+function setLocalStorage (){
     localStorage.setItem('tweetsData', JSON.stringify(tweetsData))
 }
 
