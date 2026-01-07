@@ -44,7 +44,8 @@ header{
     padding-bottom: 25px;
 }
 
-.tweet-input-area {
+.tweet-input-area,
+.reply-input-area {
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -59,20 +60,40 @@ textarea{
     margin: 0 0 20px 0;
     height: 60px;
     width: 100%;
-    font-size: 20px;
     line-height: 30px;
+}
+
+.tweet-input-area textarea{
+    font-size: 20px;
+}
+
+.reply-input-area textarea{
+    font-size: 14px;
 }
 
 button{
     background-color: #1DA1F2;
     border: none;
     color: white;
-    padding: 10px 19px;
     border-radius: 20px;
-    width: 100%; 
     cursor: pointer;
-    font-size: 20px;
+
     font-weight: 600;
+}
+
+#tweet-btn{
+    padding: 10px 19px;
+    width: 100%; 
+    font-size: 20px;
+}
+
+.reply-btn{
+    padding: 6px 9px;
+    margin-top: 13px;
+}
+
+.reply-btn i{
+    color: white;
 }
 
 /* tweet */
@@ -100,6 +121,13 @@ button{
 .tweet-detail{
     display: flex;
     gap: 4px;
+}
+
+.reply-input-area{
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0px;
+    margin: 10px 0 10px 40px;
+    width: 80%;
 }
 
 .tweet-reply{
