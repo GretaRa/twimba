@@ -1,10 +1,12 @@
 import { tweetsData as initialData} from './data.js'
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
-const tweetsData = JSON.parse(localStorage.getItem('tweetsData'));
+let tweetsData = JSON.parse(localStorage.getItem('tweetsData'));
 
-if(!tweetsData){
+// For demo purposes reset the default tweets if everything is deleted from localStorage
+if(!tweetsData || tweetsData < 1){
     localStorage.setItem('tweetsData', JSON.stringify(initialData))
+    tweetsData = initialData
 }
 
 document.addEventListener('click', function(e){
